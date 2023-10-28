@@ -73,6 +73,7 @@ deepgramLive.addListener("transcriptReceived", (message) => {
       HISTORY.push({"role": ROLE, "content": transcript});
       // output history (for storage and saving in dictionary)
       maxApi.outlet('history', { history: HISTORY });
+	  maxApi.outlet('pause');	
     }
   } else {
     console.log("Invalid or missing data in the response.");

@@ -19,7 +19,7 @@ const openai = new OpenAI({
 // Settings
 let ROLE = 'user';
 let TEMPERATURE = 1;
-let MAX_TOKENS = 500;
+let MAX_TOKENS = 300;
 
 // Chat history array
 let HISTORY = [];
@@ -34,7 +34,8 @@ const contentValues = humanResponses.map(response => response.content);
 // Construct the system instruction
 const systemInstruction = `Generate a creative story about AI and Humans using the following list of phrases:
 ${contentValues.map(content => `"${content}"`).join(', ')}. Make sure the story flows naturally 
-and incorporates these phrases in a way that makes sense. The story should be engaging and coherent. The story should be about 3 minutes long.`;
+and incorporates these phrases in a way that makes sense. The story should be engaging and coherent.
+ The story should be about 1 minute long.`;
 
 // Push the system instruction to your chat history
 HISTORY.push({
